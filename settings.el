@@ -1,0 +1,2 @@
+'(tool-bar-mode nil)
+
