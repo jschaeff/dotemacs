@@ -1,4 +1,4 @@
-
+(setq send-mail-function 'smtpmail-send-it)
 (use-package mu4e
   :commands (mu4e mu4e-headers-search mu4e-compose-new mu4e~proc-add)
   :bind ("C-c m" . mu4e)
@@ -20,14 +20,20 @@
           mu4e-html2text-command "w3m -T text/html"
           mu4e-update-interval 120
           mu4e-headers-auto-update t
-          message-signature-file "~/.emacs.d/mail-signature" ; put your signature in this file
+          mu4e-headers-fields '((:human-date . 12)
+                                (:flags . 6)
+                                (:maildir . 10)
+                                (:mailing-list . 15)
+                                (:from . 22)
+                                (:subject))
+          message-signature-file "~/skizo-emacs/mail-signature" ; put your signature in this file
           mu4e-change-filenames-when-moving t
           mu4e-headers-date-format "%F"
           mu4e-headers-time-format "%R"
           smtpmail-queue-mail nil  ;; start in normal mode
           smtpmail-queue-dir   "~/mail/queue/cur"
           smime-keys '(("jonathan.schaeffer@univ-grenoble-alpes.fr" "~/Certs/2017TerenaSchaeffer_UGA.pem" nil))
-      smime-certificate-directory "~/mail/certs/"
+          smime-certificate-directory "~/mail/certs/"
           mu4e-maildir-shortcuts '(("/uga/INBOX" . ?i)
                                    ("/uga/alertes" . ?a)
                                    ("/uga/Sent" . ?s)

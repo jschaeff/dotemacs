@@ -7,11 +7,13 @@
 (define-key global-map "\C-ca" 'org-agenda)
 
 (require 'org-protocol)
+(require 'ox-org)
 (use-package org
   :bind ("C-c c" . org-capture)
   :ensure t
   :mode (("\\.org$" . org-mode))
   :ensure org
+  :requires ox-org
   :config
   ; (add-hook 'org-mode-hook 'flyspell-mode)
   ; cosmétique
@@ -24,9 +26,9 @@
    org-log-done t
    org-enforce-todo-dependencies t
    org-directory "~/org"
-   org-agenda-files '("~/org/ecoinfo.org" "~/org/osug.org" "~/org/sist.org" "~/org/resif.org" "~/org/perso.org" "~/org/tickler.org" "~/org/inbox.org")
+   org-agenda-files '("~/org/ecoinfo" "~/org/osug" "~/org/sist" "~/org/resif" "~/org/perso" "~/org/tickler.org" "~/org/inbox.org" "org/agendas.org")
    org-agenda-strategy '(tag-up)
-   org-default-notes-file (concat org-directory "codex.org")
+   org-default-notes-file (concat org-directory "inbox.org")
    org-capture-templates
    (quote (("t" "Todo" entry (file+headline "~/org/inbox.org" "Inbox")
             "* TODO %i%?\n%a\n")

@@ -43,9 +43,18 @@
 
 ;; TODO : à configurer
 ;; (use-package 'whitespace-cleanup
-
 ;;   )
 
+(setq user-full-name "Jonathan Schaeffer"
+      user-mail-address "jonathan.schaeffer@univ-grenoble-alpes.fr")
+
+;; Gestion des backups
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+(setq delete-old-versions -1)
+(setq version-control t)
+(setq vc-make-backup-files t)
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-list/" t)))
+(fset 'yes-or-no-p 'y-or-n-p)
 
 (load "~/skizo-emacs/settings.el")
 (load "~/skizo-emacs/mu4e.el")
@@ -59,4 +68,8 @@
 (load "~/skizo-emacs/magit.el")
 (load "~/skizo-emacs/ivy.el")
 (load "~/skizo-emacs/markdown.el")
-(load "~/skizo-emacs/multiple-cursos.el")
+(load "~/skizo-emacs/multiple-cursors.el")
+(load "~/skizo-emacs/shell.el")
+(load "~/skizo-emacs/whitespaces.el")
+(load "~/skizo-emacs/undo-tree.el")
+(provide 'skizo-init)
