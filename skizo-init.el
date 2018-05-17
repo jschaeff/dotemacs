@@ -41,6 +41,9 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
+; Retours à la ligne
+(global-visual-line-mode 1)
+
 ;; TODO : à configurer
 ;; (use-package 'whitespace-cleanup
 ;;   )
@@ -72,4 +75,5 @@
 (load "~/skizo-emacs/shell.el")
 (load "~/skizo-emacs/whitespaces.el")
 (load "~/skizo-emacs/undo-tree.el")
+(load "~/skizo-emacs/tex.el")
 (provide 'skizo-init)
