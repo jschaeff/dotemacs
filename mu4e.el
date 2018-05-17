@@ -116,7 +116,7 @@
     (progn
       (mu4e-alert-set-default-style 'libnotify)
       (mu4e-alert-enable-mode-line-display)
-      (mu4e-alert-enable-notifications)
+      ; (mu4e-alert-enable-notifications)
       (setq mu4e-alert-interesting-mail-query
           (concat
            "maildir:\"/uga/INBOX\""
