@@ -26,7 +26,6 @@
    org-log-done t
    org-enforce-todo-dependencies t
    org-directory "~/org"
-   org-agenda-files '("~/org/ecoinfo" "~/org/osug" "~/org/sist" "~/org/resif" "~/org/perso" "~/org/tickler.org" "~/org/inbox.org" "org/agendas.org")
    org-agenda-strategy '(tag-up)
    org-default-notes-file (concat org-directory "inbox.org")
    org-capture-templates
@@ -44,7 +43,7 @@
      ("\\.odt\\'" . "libreoffice %s")))
    ;; allow refiling into up to 5 levels of the headline trees in all org files
    ;; Refile
-   
+
    ;; Targets start with the file name - allows creating level 1 tasks
    ;;  (setq org-refile-use-outline-path (quote file))
    ;; Targets complete in steps so we start with filename
@@ -171,9 +170,9 @@
                                   ("I" "#+INCLUDE: %file ?"))
    org-stuck-projects '("+PROJECT/-DONE-CANCELLED" ("WAITING" "TODO")  nil "")
    org-tags-exclude-from-inheritance '("PROJECT")
-   
+
    org-agenda-dim-blocked-tasks 'invisible
-  ;; Config de org-reveal 
+  ;; Config de org-reveal
    ;;   org-reveal-root "file:///home/schaeffj/.emacs.d/reveal.js"
    )
 
@@ -221,7 +220,7 @@
     (when should-skip-entry
       (or (outline-next-heading)
           (goto-char (point-max))))))
-		  
+
 (defun org-current-is-todo ()
   (string= "TODO" (org-get-todo-state)))
 
@@ -260,4 +259,3 @@
 (setq org-time-clocksum-use-effort-durations t)
 ;; Format des durées en hh:mm et non en jours
 (setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
-
